@@ -1,0 +1,10 @@
+Django >= 2.0
+djangorestframework >= 3.7.7
+Pillow
+coreapi
+Markdown==2.6.6
+django-cleanup
+djangorestframework-jwt
+djoser==1.1.5
+psycopg2
+django-cors-headers
