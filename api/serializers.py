@@ -18,7 +18,20 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     def validate_rating(self, value):
         """
-        Checking that rating its between 1-5
+        A function that checks that the rating value is between 1 and 5
+
+        Parameters
+        ----------
+        self:int
+            The current serializer object
+        value:int
+            Rating number of the review
+        Returns
+        -------
+        int
+            The value of the rating
+        str
+            ValidationError
         """
         if value < 1 or value > 5:
             raise serializers.ValidationError("Rating must be between 1 and 5")

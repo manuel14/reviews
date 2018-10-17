@@ -14,7 +14,17 @@ You can see the other requirements inside the requirements files.
 
 To install this project you can use `pip` or download individually which library from PyPI.
 
-Using `pip`, you can run the following commands for each environment you want:
+Using `pip`, you can run the following commands for each environment you want.
+First you need to activate the environment.
+On windows:
+```bash
+env\Scripts\activate
+```
+
+On linux:
+```bash
+source env/bin/activate
+```
 
 ```bash
 pip install -r requirements.txt
@@ -43,3 +53,22 @@ This command will run the project in `development` mode.
 
 You can access the admin page by `http://localhost:8000/admin` and using the previous created superuser. 
 Then, you can manage the users and their access tokens.
+
+## Testing
+
+
+To run all the tests, you run the following command:
+
+```bash
+python manage.py test
+```
+
+## Code coverage
+
+
+To run all the tests, you run the following command:
+
+```bash
+coverage run --source='api.tests' manage.py test
+coverage report
+```

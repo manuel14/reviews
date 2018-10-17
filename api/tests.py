@@ -58,7 +58,7 @@ class ReviewTests(APITestCase):
         review = Review.objects.filter(reviewer__user=self.user)[0]
         review_serializer = ReviewListSerializer(review, many=False)
         response = self.client.get(
-            '/api/review/', format="json")
+            '/v1/api/review/', format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(review_serializer.data, response.json()[0])
 
@@ -71,7 +71,7 @@ class ReviewTests(APITestCase):
             jwt_url, data=user, content_type="application/json")
         client.credentials(HTTP_AUTHORIZATION='JWT ' + jwt_resp.data["token"])
         response = client.get(
-            "/api/review/", content_type="application/json")
+            "/v1/api/review/", content_type="application/json")
         self.assertEqual(len(response.data), 0)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -81,7 +81,7 @@ class ReviewTests(APITestCase):
                            "title": "mock title", "submissionDate": "2018-09-09",
                            "reviewer": self.first_reviewer.pk, "company": self.first_company.pk})
         response = self.client.post(
-            "/api/review/", data=data, content_type="application/json")
+            "/v1/api/review/", data=data, content_type="application/json")
         review = Review.objects.get(pk=response.json()["id"])
         review_serializer = ReviewSerializer(review)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)

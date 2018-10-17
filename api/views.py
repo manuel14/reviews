@@ -25,6 +25,9 @@ class ReviewViewSet(mixins.CreateModelMixin,
                     viewsets.GenericViewSet):
 
     def create(self, request):
+        """
+        Creates 1 or more reviews objects.
+        """
         # retrieving ip from request
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -48,17 +51,26 @@ class ReviewViewSet(mixins.CreateModelMixin,
         return Response(serializer.data, status=HTTP_201_CREATED, headers=headers)
 
     def get_serializer_class(self, *args, **kwargs):
+        """
+        Defines wich serializer to use depending on the action dispatched.
+        """
         if self.action in ["list", "retrieve"]:
             return ReviewListSerializer
         else:
             return ReviewSerializer
 
     def list(self, request):
+        """
+        Returns all reviews for the logged in user.
+        """
         data = Review.objects.filter(reviewer__user=request.user)
         serializer = self.get_serializer(data, many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
+        """
+        Retrieves a single Review if the logged in user is the author.
+        """
         try:
             review = Review.objects.get(pk=pk, reviewer__user=request.user)
             serializer = self.get_serializer(review, many=False)
