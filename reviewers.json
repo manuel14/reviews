@@ -1,0 +1,1 @@
+[{"model": "api.reviewer", "pk": 1, "fields": {"name": "Manuel", "email": "manuelzubieta14@gmail.com", "user": 1}}, {"model": "api.reviewer", "pk": 2, "fields": {"name": "pepe hdp", "email": "pepito@galletita.com", "user": 2}}]

@@ -1,0 +1,1 @@
+[{"model": "api.company", "pk": 1, "fields": {"name": "Intel"}}, {"model": "api.company", "pk": 2, "fields": {"name": "Samsung"}}, {"model": "api.company", "pk": 3, "fields": {"name": "Hbo"}}]
