@@ -24,7 +24,7 @@ from rest_framework import permissions, authentication
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Snippets API",
+      title="Reviews API",
       default_version='v1',
       description="Test description",
       terms_of_service="https://www.google.com/policies/terms/",

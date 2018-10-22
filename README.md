@@ -90,6 +90,6 @@ coverage report
 
 #Modeling Design
 
-1)I decided that the submissionDate attribute could be some date that was significant
+1)I have decided that the submissionDate attribute could be some date that was significant
 for the review. So that was the reason for no to generate it when the review is created like a timestamp.
-2)
+2)I have decided that the reviewerIp is taken from the request object.
