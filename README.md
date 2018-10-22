@@ -85,7 +85,7 @@ python manage.py test
 ## Code coverage
 
 
-To run all the tests, you run the following command:
+To run all the tests, you run the following commands:
 
 ```bash
 coverage run --source='api' manage.py test
@@ -98,3 +98,7 @@ coverage report
 for the review. So that was the reason for no to generate it when the review is created like a timestamp.
 
 2)I have decided that the reviewerIp is taken from the request object.
+
+## API documentation
+
+To take a look at the api endpoints visit: http://localhost:8000/swagger/
