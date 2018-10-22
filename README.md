@@ -41,6 +41,7 @@ The environment is using SQLite by default, to make easier to run and test the p
 After setup the DB, you need to run the following commands to have the data scheme right.
 
 ```bash
+python manage.py makemigrations api
 python manage.py migrate
 python manage.py createsuperuser
 ```
