@@ -6,7 +6,7 @@ from rest_framework.routers import DefaultRouter, SimpleRouter
 
 from . import views
 
-if settings.DEBUG:
+if settings.DEBUG:# pragma: no cover
     router = DefaultRouter()
 else:
     router = SimpleRouter()

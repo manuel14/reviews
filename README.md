@@ -12,10 +12,8 @@ You can see the other requirements inside the requirements files.
 
 ## Installing
 
-To install this project you can use `pip` or download individually which library from PyPI.
-
-Using `pip`, you can run the following commands for each environment you want.
 First you need to activate the environment.
+
 On windows:
 ```bash
 env\Scripts\activate
@@ -25,6 +23,10 @@ On linux:
 ```bash
 source env/bin/activate
 ```
+
+To install this project you can use `pip` or download individually which library from PyPI.
+
+Using `pip`, you can run the following commands for each environment you want.
 
 ```bash
 pip install -r requirements.txt
@@ -39,6 +41,19 @@ After setup the DB, you need to run the following commands to have the data sche
 ```bash
 python manage.py migrate
 python manage.py createsuperuser
+```
+
+There you will be prompted to enter the superuser credentials: username, email(optional)
+and password.
+
+## Loading initial data
+
+To load some data into the database you must run the following commands. Being located in the root of the project
+
+```bash
+python manage.py loaddata company.json
+python manage.py loaddata reviewers.json
+python manage.py loaddata reviews.json
 ```
 
 ## Running
@@ -69,6 +84,12 @@ python manage.py test
 To run all the tests, you run the following command:
 
 ```bash
-coverage run --source='api.tests' manage.py test
+coverage run --source='api' manage.py test
 coverage report
 ```
+
+#Modeling Design
+
+1)I decided that the submissionDate attribute could be some date that was significant
+for the review. So that was the reason for no to generate it when the review is created like a timestamp.
+2)

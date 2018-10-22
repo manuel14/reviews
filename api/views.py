@@ -30,7 +30,7 @@ class ReviewViewSet(mixins.CreateModelMixin,
         """
         # retrieving ip from request
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
+        if x_forwarded_for:# pragma: no cover
             ip = x_forwarded_for.split(',')[0]
         else:
             ip = request.META.get('REMOTE_ADDR')
@@ -61,7 +61,7 @@ class ReviewViewSet(mixins.CreateModelMixin,
 
     def list(self, request):
         """
-        Returns all reviews for the logged in user.
+        Returns all reviews for the logged-in user.
         """
         data = Review.objects.filter(reviewer__user=request.user)
         serializer = self.get_serializer(data, many=True)
@@ -69,7 +69,7 @@ class ReviewViewSet(mixins.CreateModelMixin,
 
     def retrieve(self, request, pk=None):
         """
-        Retrieves a single Review if the logged in user is the author.
+        Retrieves a single Review if the logged-in user is the author.
         """
         try:
             review = Review.objects.get(pk=pk, reviewer__user=request.user)

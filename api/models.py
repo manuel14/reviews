@@ -20,7 +20,7 @@ class Company(models.Model):
         verbose_name = "Company"
         verbose_name_plural = "Companies"
 
-    def __str__(self):
+    def __str__(self):# pragma: no cover
         """
         String representation of any object of the class
         """
@@ -58,7 +58,7 @@ class Review(models.Model):
     reviewer = models.ForeignKey(
         "Reviewer", related_name="reviews", on_delete=models.DO_NOTHING)
 
-    def __str__(self):
+    def __str__(self):# pragma: no cover
         """
         String representation of any object of the class
         """
@@ -92,7 +92,7 @@ class Reviewer(models.Model):
         verbose_name = "Reviewer"
         verbose_name_plural = "Reviewers"
 
-    def __str__(self):
+    def __str__(self):# pragma: no cover
         """
         String representation of the class
         """
