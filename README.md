@@ -88,7 +88,7 @@ coverage run --source='api' manage.py test
 coverage report
 ```
 
-#Modeling Design
+## Modeling Design
 
 1)I have decided that the submissionDate attribute could be some date that was significant
 for the review. So that was the reason for no to generate it when the review is created like a timestamp.
