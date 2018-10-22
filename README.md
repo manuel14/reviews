@@ -16,11 +16,13 @@ First you need to activate the environment.
 
 On windows:
 ```bash
+virtualenv env
 env\Scripts\activate
 ```
 
 On linux:
 ```bash
+virtualenv env
 source env/bin/activate
 ```
 

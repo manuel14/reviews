@@ -8,3 +8,4 @@ djangorestframework-jwt
 djoser==1.1.5
 psycopg2
 coverage
+drf_yasg
