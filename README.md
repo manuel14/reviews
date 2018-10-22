@@ -54,6 +54,7 @@ To load some data into the database you must run the following commands. Being l
 
 ```bash
 python manage.py loaddata company.json
+python manage.py loaddata users.json
 python manage.py loaddata reviewers.json
 python manage.py loaddata reviews.json
 ```
